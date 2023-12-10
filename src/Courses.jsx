@@ -40,7 +40,7 @@ export function Course({course}) {
         <Typography textAlign={"center"} variant="subtitle1">{course.description}</Typography>
         <img src={course.imageLink} style={{width: 300}} ></img>
         <div style={{display: "flex", justifyContent: "center", marginTop: 20}}>
-            <Button variant="contained" size="large" onClick={() => {
+            <Button variant="contained" sx={{bgcolor:"secondary.main"}} size="large" onClick={() => {
                 navigate("/course/" + course._id);
             }}>Edit</Button>
         </div>

@@ -1,4 +1,3 @@
-import {Typography} from "@mui/material";
 import Button from "@mui/material/Button";
 import { useEffect, useState } from "react";
 import {useNavigate} from "react-router-dom";
@@ -27,33 +26,46 @@ function Appbar() {
 
     if (userEmail) {
         return <div style={{
-            display: "flex",
-            justifyContent: "space-between",
-            padding: 30,
             zIndex: 1,
             backgroundColor: "#FFFFFF"
         }}>
-            <div style={{marginLeft: 30}}>
-                <Typography variant={"h5"}>CourseApp</Typography>
-            </div>
+            <div style={{
+            display: "flex",
+            justifyContent: "space-between",
+            flexWrap: "wrap",
+            padding: 16,
+            maxWidth: 1780,
+            alignItems:"center",
+            marginLeft: "auto" ,
+            marginRight:"auto",
+            boxSizing:"border-box"}}>
+
+
+            
+            <img src="assets/icon.svg" alt="logo" width="200" height="45" onClick={() => {
+                            navigate("/") 
+                        }}></img>
+            
     
-            <div style={{display: "flex" , justifyContent: "space-around"}}>
-                    <div >
+            <div style={{display: "flex" , justifyContent: "space-between"}}>
+                    <div style={{marginRight:20}}>
                         <Button
-                            onClick={() => {
+                        variant={"outlined"}
+                         onClick={() => {
                                 navigate("/addcourse")
                             }}
                         >Add course</Button>
                     </div>
 
-                    <div >
+                    <div style={{marginRight:20}}>
                         <Button
+                            variant={"outlined"}
                             onClick={() => {
                                 navigate("/courses")
                             }}
                         >Courses</Button>
                     </div>
-                    <div style={{marginLeft:10}}>
+                    <div>
                     <Button
                         variant={"contained"}
                         onClick={() => {
@@ -62,24 +74,37 @@ function Appbar() {
                         }}
                     >Logout</Button>
                     </div>
+                    </div>
             </div>
         </div>
     } else {
         return <div style={{
+            height:72,
+            zIndex: 1,
+            backgroundColor: "#FFFFFF",
+            
+        }}>
+            <div style={{
             display: "flex",
             justifyContent: "space-between",
-            padding: 30,
-            zIndex: 1,
-            backgroundColor: "#FFFFFF"
-        }}>
-            <div style={{marginLeft: 30}}>
-                <Typography variant={"h5"}>CourseApp</Typography>
-            </div>
+            flexWrap: "wrap",
+            padding: 16,
+            maxWidth: 1780,
+            alignItems:"center",
+            marginLeft: "auto" ,
+            marginRight:"auto",
+            boxSizing:"border-box"}}
+            >
+                
+            <img src="assets/icon.svg" alt="logo" width="200" height="45" onClick={() => {
+                            navigate("/") 
+                        }}></img>
+            
     
-            <div style={{display: "flex" ,justifyContent:"space-between"}}>
-                <div style={{marginRight: 30}}>
-                    <Button
-                        variant={"contained"}
+            <div style={{display: "flex"}}>
+                <div style={{marginRight:30}}>
+                    <Button 
+                        variant={"outlined"}
                         onClick={() => {
                             navigate("/signup")
                         }}
@@ -93,6 +118,7 @@ function Appbar() {
                         }}
                     >Signin</Button>
                 </div>
+            </div>
             </div>
         </div>
     }

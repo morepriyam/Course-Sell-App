@@ -70,6 +70,7 @@ function UpdateCard(props) {
     />
 
     <Button
+        sx={{bgcolor:"secondary.main"}}
         size={"large"}
         variant="contained"
         onClick={() => {

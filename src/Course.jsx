@@ -104,6 +104,7 @@ function UpdateCard({course, setCourse}) {
             />
 
             <Button
+                sx={{bgcolor:"secondary.main"}}
                 variant="contained"
                 onClick={async () => {
                     axios.put("http://localhost:3000/admin/courses/" + course._id, {

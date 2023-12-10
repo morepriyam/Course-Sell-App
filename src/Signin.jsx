@@ -16,7 +16,7 @@ function Signin() {
                 justifyContent: "center"
             }}>
                 <Typography variant={"h6"}>
-                Welcome to Coursera. Sign up below
+                Welcome to Udemy, Sign In Below
                 </Typography>
             </div>
         <div style={{display: "flex", justifyContent: "center"}}>
@@ -43,6 +43,7 @@ function Signin() {
                 <br/><br/>
 
                 <Button
+                    sx={{bgcolor:"secondary.main"}}
                     size={"large"}
                     variant="contained"
                     onClick={async () => {
