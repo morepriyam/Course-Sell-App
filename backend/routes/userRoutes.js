@@ -13,6 +13,7 @@ const {
 
 //Auth
 const auth = require("../middleware/auth");
+const { inputValidation } = require("../middleware/inputValid");
 const authenticateJwt = auth.authenticateJwt;
 
 // Create an instance of the Express Router
@@ -21,7 +22,7 @@ const userRouter = express.Router();
 // Define routes and associate them with the corresponding controllers/middleware
 
 // Route for user signup
-userRouter.post("/signup", signup);
+userRouter.post("/signup",inputValidation, signup);
 
 // Route for user signin
 userRouter.post("/signin", signin);
