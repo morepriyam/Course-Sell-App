@@ -7,7 +7,9 @@ const inputValidation = (req, res, next) => {
   const usernameResponse = emailSchema.safeParse(email);
   const passwordResponse = passwordSchema.safeParse(password);
   if (!usernameResponse.success || !passwordResponse.success) {
-    return res.json({ message: "Enter Valid Email & Password Min 6char" });
+    return res
+      .status(400)
+      .json({ customError: "enter valid email, pwd - min 6 char" });
   }
   next();
 };
